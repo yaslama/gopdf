@@ -1,23 +1,21 @@
 package gopdf
 
-import (
-	
-)
+import ()
 
-type Current struct{
+type Current struct {
 	X float64
 	Y float64
-	
+
 	//font
 	IndexOfFontObj int
-	CountOfFont int
-	CountOfL int
-	
-	Font_Size int
-	Font_Style string
-	Font_IFont IFont
+	CountOfFont    int
+	CountOfL       int
+
+	Font_Size      int
+	Font_Style     string
+	Font_IFont     IFont
 	Font_FontCount int
-	
+
 	//page
 	IndexOfPageObj int
 
@@ -27,7 +25,7 @@ type Current struct{
 	ImgCaches []ImageCache
 }
 
-type ImageCache struct{
-	Path string
+type ImageCache struct {
+	Path  string
 	Index int
 }

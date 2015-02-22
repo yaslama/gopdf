@@ -1,16 +1,10 @@
 package gopdf
 
-import (
+import ()
 
-)
-
-
-type Config struct{
+type Config struct {
 	//pt , mm , cm , in
-	Unit string 
+	Unit     string
 	PageSize Rect
-	K float64
+	K        float64
 }
-
-
-

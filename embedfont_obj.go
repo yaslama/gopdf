@@ -6,15 +6,14 @@ import (
 	"strconv"
 )
 
-
-type EmbedFontObj struct{
+type EmbedFontObj struct {
 	buffer    bytes.Buffer
-	Data string
+	Data      string
 	zfontpath string
-	font IFont
+	font      IFont
 }
 
-func (me *EmbedFontObj) Init(funcGetRoot func()(*GoPdf)) {
+func (me *EmbedFontObj) Init(funcGetRoot func() *GoPdf) {
 }
 
 func (me *EmbedFontObj) Build() {
@@ -22,9 +21,9 @@ func (me *EmbedFontObj) Build() {
 	if err != nil {
 		return
 	}
-	me.buffer.WriteString("<</Length "+ strconv.Itoa(len(b)) +"\n")
+	me.buffer.WriteString("<</Length " + strconv.Itoa(len(b)) + "\n")
 	me.buffer.WriteString("/Filter /FlateDecode\n")
-	me.buffer.WriteString("/Length1 "+strconv.Itoa(me.font.GetOriginalsize())+"\n")
+	me.buffer.WriteString("/Length1 " + strconv.Itoa(me.font.GetOriginalsize()) + "\n")
 	me.buffer.WriteString(">>\n")
 	me.buffer.WriteString("stream\n")
 	me.buffer.Write(b)
@@ -39,7 +38,7 @@ func (me *EmbedFontObj) GetObjBuff() *bytes.Buffer {
 	return &(me.buffer)
 }
 
-func (me *EmbedFontObj) SetFont(font IFont,zfontpath string){
+func (me *EmbedFontObj) SetFont(font IFont, zfontpath string) {
 	me.font = font
 	me.zfontpath = zfontpath
 }
