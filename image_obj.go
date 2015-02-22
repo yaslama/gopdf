@@ -2,12 +2,15 @@ package gopdf
 
 import (
 	"bytes"
+	"encoding/base64"
 	"fmt"
 	"image"
 	_ "image/jpeg"
 	_ "image/png"
+	"io"
 	"io/ioutil"
 	"os"
+	"strings"
 )
 
 type ImageObj struct {
@@ -21,20 +24,26 @@ func (me *ImageObj) Init(funcGetRoot func() *GoPdf) {
 
 func (me *ImageObj) Build() {
 
-	file, err := os.Open(me.imagepath)
-	if err != nil {
-		//fmt.Printf("0--%+v\n",err)
-		return
+	var err error
+	var data []byte
+	if strings.HasPrefix(me.imagepath, "data:image/jpeg;base64,") {
+		data, err = base64.StdEncoding.DecodeString(me.imagepath[len("data:image/jpeg;base64,"):])
+		if err != nil {
+			return
+		}
+	} else {
+		data, err = ioutil.ReadFile(me.imagepath)
+		if err != nil {
+			//fmt.Printf("0--%+v\n",err)
+			return
+		}
 	}
-
-	m, _, err := image.Decode(file)
+	m, _, err := image.Decode(bytes.NewReader(data))
 	if err != nil {
 		return
 	}
 
 	imageRect := m.Bounds()
-
-	b, _ := ioutil.ReadFile(me.imagepath)
 
 	me.buffer.WriteString("<</Type /XObject\n")
 	me.buffer.WriteString("/Subtype /Image\n")
@@ -45,9 +54,9 @@ func (me *ImageObj) Build() {
 	me.buffer.WriteString("/Filter /DCTDecode\n")
 	//me.buffer.WriteString("/Filter /FlateDecode\n")
 	//me.buffer.WriteString("/DecodeParms <</Predictor 15 /Colors 3 /BitsPerComponent 8 /Columns 675>>\n")
-	me.buffer.WriteString(fmt.Sprintf("/Length %d\n>>\n", len(b))) // /Length 62303>>\n
+	me.buffer.WriteString(fmt.Sprintf("/Length %d\n>>\n", len(data))) // /Length 62303>>\n
 	me.buffer.WriteString("stream\n")
-	me.buffer.Write(b)
+	me.buffer.Write(data)
 	me.buffer.WriteString("\nendstream\n")
 }
 
@@ -64,7 +73,17 @@ func (me *ImageObj) SetImagePath(path string) {
 }
 
 func (me *ImageObj) GetRect() *Rect {
-	file, err := os.Open(me.imagepath)
+	var file io.Reader
+	var err error
+	if strings.HasPrefix(me.imagepath, "data:image/jpeg;base64,") {
+		data, err := base64.StdEncoding.DecodeString(me.imagepath[len("data:image/jpeg;base64,"):])
+		if err != nil {
+			return nil
+		}
+		file = bytes.NewReader(data)
+	} else {
+		file, err = os.Open(me.imagepath)
+	}
 	m, _, err := image.Decode(file)
 	if err != nil {
 		return nil
