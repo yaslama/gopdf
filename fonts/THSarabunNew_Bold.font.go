@@ -1,7 +1,7 @@
 package fonts
 
 import (
-	"github.com/signintech/gopdf"
+	"github.com/yaslama/gopdf"
 )
 
 type THSarabunNewBold struct {
