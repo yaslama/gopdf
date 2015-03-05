@@ -98,7 +98,7 @@ func (me *FontMaker) MakeDefinitionFile(gofontname string, mappath string, expor
 	str := ""
 	str += "package fonts //change this\n"
 	str += "import (\n"
-	str += "	\"github.com/signintech/gopdf\"\n"
+	str += "	\"github.com/yaslama/gopdf\"\n"
 	str += ")\n"
 	str += "type " + gofontname + " struct {\n"
 	str += "\tfamily string\n"

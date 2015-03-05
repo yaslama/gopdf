@@ -3,7 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/signintech/gopdf/fontmaker/core"
+	"github.com/yaslama/gopdf/fontmaker/core"
 	"os"
 	//"runtime/debug"
 )

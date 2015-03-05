@@ -1,6 +1,6 @@
 package fonts //change this
 import (
-	"github.com/signintech/gopdf"
+	"github.com/yaslama/gopdf"
 )
 type Roboto-ThinItalic struct {
 	family string

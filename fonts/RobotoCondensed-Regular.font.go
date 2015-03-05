@@ -1,6 +1,6 @@
 package fonts //change this
 import (
-	"github.com/signintech/gopdf"
+	"github.com/yaslama/gopdf"
 )
 type RobotoCondensed-Regular struct {
 	family string
