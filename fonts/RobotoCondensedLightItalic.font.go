@@ -2,7 +2,7 @@ package fonts //change this
 import (
 	"github.com/yaslama/gopdf"
 )
-type RobotoCondensed-LightItalic struct {
+type RobotoCondensedLightItalic struct {
 	family string
 	fonttype string
 	name string
@@ -13,7 +13,7 @@ type RobotoCondensed-LightItalic struct {
 	enc string
 	diff string
 }
-func (me * RobotoCondensed-LightItalic) Init(){
+func (me * RobotoCondensedLightItalic) Init(){
 	me.cw = make(gopdf.FontCw)
 	me.cw[gopdf.Chr(0)]=200
 	me.cw[gopdf.Chr(1)]=200
@@ -286,36 +286,36 @@ func (me * RobotoCondensed-LightItalic) Init(){
 	me.desc[6] =  gopdf.FontDescItem{ Key:"StemV", Val :  "70" }
  	me.desc[7] =  gopdf.FontDescItem{ Key:"MissingWidth", Val :  "200" } 
  }
-func (me * RobotoCondensed-LightItalic)GetType() string{
+func (me * RobotoCondensedLightItalic)GetType() string{
 	return me.fonttype
 }
-func (me * RobotoCondensed-LightItalic)GetName() string{
+func (me * RobotoCondensedLightItalic)GetName() string{
 	return me.name
 }	
-func (me * RobotoCondensed-LightItalic)GetDesc() []gopdf.FontDescItem{
+func (me * RobotoCondensedLightItalic)GetDesc() []gopdf.FontDescItem{
 	return me.desc
 }
-func (me * RobotoCondensed-LightItalic)GetUp() int{
+func (me * RobotoCondensedLightItalic)GetUp() int{
 	return me.up
 }
-func (me * RobotoCondensed-LightItalic)GetUt()  int{
+func (me * RobotoCondensedLightItalic)GetUt()  int{
 	return me.ut
 }
-func (me * RobotoCondensed-LightItalic)GetCw() gopdf.FontCw{
+func (me * RobotoCondensedLightItalic)GetCw() gopdf.FontCw{
 	return me.cw
 }
-func (me * RobotoCondensed-LightItalic)GetEnc() string{
+func (me * RobotoCondensedLightItalic)GetEnc() string{
 	return me.enc
 }
-func (me * RobotoCondensed-LightItalic)GetDiff() string {
+func (me * RobotoCondensedLightItalic)GetDiff() string {
 	return me.diff
 }
-func (me * RobotoCondensed-LightItalic) GetOriginalsize() int{
+func (me * RobotoCondensedLightItalic) GetOriginalsize() int{
 	return 98764
 }
-func (me * RobotoCondensed-LightItalic)  SetFamily(family string){
+func (me * RobotoCondensedLightItalic)  SetFamily(family string){
 	me.family = family
 }
-func (me * RobotoCondensed-LightItalic) 	GetFamily() string{
+func (me * RobotoCondensedLightItalic) 	GetFamily() string{
 	return me.family
 }

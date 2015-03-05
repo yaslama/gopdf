@@ -2,7 +2,7 @@ package fonts //change this
 import (
 	"github.com/yaslama/gopdf"
 )
-type RobotoCondensed-Italic struct {
+type RobotoCondensedItalic struct {
 	family string
 	fonttype string
 	name string
@@ -13,7 +13,7 @@ type RobotoCondensed-Italic struct {
 	enc string
 	diff string
 }
-func (me * RobotoCondensed-Italic) Init(){
+func (me * RobotoCondensedItalic) Init(){
 	me.cw = make(gopdf.FontCw)
 	me.cw[gopdf.Chr(0)]=207
 	me.cw[gopdf.Chr(1)]=207
@@ -286,36 +286,36 @@ func (me * RobotoCondensed-Italic) Init(){
 	me.desc[6] =  gopdf.FontDescItem{ Key:"StemV", Val :  "70" }
  	me.desc[7] =  gopdf.FontDescItem{ Key:"MissingWidth", Val :  "207" } 
  }
-func (me * RobotoCondensed-Italic)GetType() string{
+func (me * RobotoCondensedItalic)GetType() string{
 	return me.fonttype
 }
-func (me * RobotoCondensed-Italic)GetName() string{
+func (me * RobotoCondensedItalic)GetName() string{
 	return me.name
 }	
-func (me * RobotoCondensed-Italic)GetDesc() []gopdf.FontDescItem{
+func (me * RobotoCondensedItalic)GetDesc() []gopdf.FontDescItem{
 	return me.desc
 }
-func (me * RobotoCondensed-Italic)GetUp() int{
+func (me * RobotoCondensedItalic)GetUp() int{
 	return me.up
 }
-func (me * RobotoCondensed-Italic)GetUt()  int{
+func (me * RobotoCondensedItalic)GetUt()  int{
 	return me.ut
 }
-func (me * RobotoCondensed-Italic)GetCw() gopdf.FontCw{
+func (me * RobotoCondensedItalic)GetCw() gopdf.FontCw{
 	return me.cw
 }
-func (me * RobotoCondensed-Italic)GetEnc() string{
+func (me * RobotoCondensedItalic)GetEnc() string{
 	return me.enc
 }
-func (me * RobotoCondensed-Italic)GetDiff() string {
+func (me * RobotoCondensedItalic)GetDiff() string {
 	return me.diff
 }
-func (me * RobotoCondensed-Italic) GetOriginalsize() int{
+func (me * RobotoCondensedItalic) GetOriginalsize() int{
 	return 98764
 }
-func (me * RobotoCondensed-Italic)  SetFamily(family string){
+func (me * RobotoCondensedItalic)  SetFamily(family string){
 	me.family = family
 }
-func (me * RobotoCondensed-Italic) 	GetFamily() string{
+func (me * RobotoCondensedItalic) 	GetFamily() string{
 	return me.family
 }

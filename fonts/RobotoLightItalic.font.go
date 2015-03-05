@@ -2,7 +2,7 @@ package fonts //change this
 import (
 	"github.com/yaslama/gopdf"
 )
-type Roboto-LightItalic struct {
+type RobotoLightItalic struct {
 	family string
 	fonttype string
 	name string
@@ -13,7 +13,7 @@ type Roboto-LightItalic struct {
 	enc string
 	diff string
 }
-func (me * Roboto-LightItalic) Init(){
+func (me * RobotoLightItalic) Init(){
 	me.cw = make(gopdf.FontCw)
 	me.cw[gopdf.Chr(0)]=231
 	me.cw[gopdf.Chr(1)]=231
@@ -286,36 +286,36 @@ func (me * Roboto-LightItalic) Init(){
 	me.desc[6] =  gopdf.FontDescItem{ Key:"StemV", Val :  "70" }
  	me.desc[7] =  gopdf.FontDescItem{ Key:"MissingWidth", Val :  "231" } 
  }
-func (me * Roboto-LightItalic)GetType() string{
+func (me * RobotoLightItalic)GetType() string{
 	return me.fonttype
 }
-func (me * Roboto-LightItalic)GetName() string{
+func (me * RobotoLightItalic)GetName() string{
 	return me.name
 }	
-func (me * Roboto-LightItalic)GetDesc() []gopdf.FontDescItem{
+func (me * RobotoLightItalic)GetDesc() []gopdf.FontDescItem{
 	return me.desc
 }
-func (me * Roboto-LightItalic)GetUp() int{
+func (me * RobotoLightItalic)GetUp() int{
 	return me.up
 }
-func (me * Roboto-LightItalic)GetUt()  int{
+func (me * RobotoLightItalic)GetUt()  int{
 	return me.ut
 }
-func (me * Roboto-LightItalic)GetCw() gopdf.FontCw{
+func (me * RobotoLightItalic)GetCw() gopdf.FontCw{
 	return me.cw
 }
-func (me * Roboto-LightItalic)GetEnc() string{
+func (me * RobotoLightItalic)GetEnc() string{
 	return me.enc
 }
-func (me * Roboto-LightItalic)GetDiff() string {
+func (me * RobotoLightItalic)GetDiff() string {
 	return me.diff
 }
-func (me * Roboto-LightItalic) GetOriginalsize() int{
+func (me * RobotoLightItalic) GetOriginalsize() int{
 	return 98764
 }
-func (me * Roboto-LightItalic)  SetFamily(family string){
+func (me * RobotoLightItalic)  SetFamily(family string){
 	me.family = family
 }
-func (me * Roboto-LightItalic) 	GetFamily() string{
+func (me * RobotoLightItalic) 	GetFamily() string{
 	return me.family
 }

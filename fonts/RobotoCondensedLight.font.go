@@ -2,7 +2,7 @@ package fonts //change this
 import (
 	"github.com/yaslama/gopdf"
 )
-type RobotoCondensed-Light struct {
+type RobotoCondensedLight struct {
 	family string
 	fonttype string
 	name string
@@ -13,7 +13,7 @@ type RobotoCondensed-Light struct {
 	enc string
 	diff string
 }
-func (me * RobotoCondensed-Light) Init(){
+func (me * RobotoCondensedLight) Init(){
 	me.cw = make(gopdf.FontCw)
 	me.cw[gopdf.Chr(0)]=205
 	me.cw[gopdf.Chr(1)]=205
@@ -286,36 +286,36 @@ func (me * RobotoCondensed-Light) Init(){
 	me.desc[6] =  gopdf.FontDescItem{ Key:"StemV", Val :  "70" }
  	me.desc[7] =  gopdf.FontDescItem{ Key:"MissingWidth", Val :  "205" } 
  }
-func (me * RobotoCondensed-Light)GetType() string{
+func (me * RobotoCondensedLight)GetType() string{
 	return me.fonttype
 }
-func (me * RobotoCondensed-Light)GetName() string{
+func (me * RobotoCondensedLight)GetName() string{
 	return me.name
 }	
-func (me * RobotoCondensed-Light)GetDesc() []gopdf.FontDescItem{
+func (me * RobotoCondensedLight)GetDesc() []gopdf.FontDescItem{
 	return me.desc
 }
-func (me * RobotoCondensed-Light)GetUp() int{
+func (me * RobotoCondensedLight)GetUp() int{
 	return me.up
 }
-func (me * RobotoCondensed-Light)GetUt()  int{
+func (me * RobotoCondensedLight)GetUt()  int{
 	return me.ut
 }
-func (me * RobotoCondensed-Light)GetCw() gopdf.FontCw{
+func (me * RobotoCondensedLight)GetCw() gopdf.FontCw{
 	return me.cw
 }
-func (me * RobotoCondensed-Light)GetEnc() string{
+func (me * RobotoCondensedLight)GetEnc() string{
 	return me.enc
 }
-func (me * RobotoCondensed-Light)GetDiff() string {
+func (me * RobotoCondensedLight)GetDiff() string {
 	return me.diff
 }
-func (me * RobotoCondensed-Light) GetOriginalsize() int{
+func (me * RobotoCondensedLight) GetOriginalsize() int{
 	return 98764
 }
-func (me * RobotoCondensed-Light)  SetFamily(family string){
+func (me * RobotoCondensedLight)  SetFamily(family string){
 	me.family = family
 }
-func (me * RobotoCondensed-Light) 	GetFamily() string{
+func (me * RobotoCondensedLight) 	GetFamily() string{
 	return me.family
 }

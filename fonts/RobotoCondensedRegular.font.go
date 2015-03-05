@@ -2,7 +2,7 @@ package fonts //change this
 import (
 	"github.com/yaslama/gopdf"
 )
-type RobotoCondensed-Regular struct {
+type RobotoCondensedRegular struct {
 	family string
 	fonttype string
 	name string
@@ -13,7 +13,7 @@ type RobotoCondensed-Regular struct {
 	enc string
 	diff string
 }
-func (me * RobotoCondensed-Regular) Init(){
+func (me * RobotoCondensedRegular) Init(){
 	me.cw = make(gopdf.FontCw)
 	me.cw[gopdf.Chr(0)]=211
 	me.cw[gopdf.Chr(1)]=211
@@ -286,36 +286,36 @@ func (me * RobotoCondensed-Regular) Init(){
 	me.desc[6] =  gopdf.FontDescItem{ Key:"StemV", Val :  "70" }
  	me.desc[7] =  gopdf.FontDescItem{ Key:"MissingWidth", Val :  "211" } 
  }
-func (me * RobotoCondensed-Regular)GetType() string{
+func (me * RobotoCondensedRegular)GetType() string{
 	return me.fonttype
 }
-func (me * RobotoCondensed-Regular)GetName() string{
+func (me * RobotoCondensedRegular)GetName() string{
 	return me.name
 }	
-func (me * RobotoCondensed-Regular)GetDesc() []gopdf.FontDescItem{
+func (me * RobotoCondensedRegular)GetDesc() []gopdf.FontDescItem{
 	return me.desc
 }
-func (me * RobotoCondensed-Regular)GetUp() int{
+func (me * RobotoCondensedRegular)GetUp() int{
 	return me.up
 }
-func (me * RobotoCondensed-Regular)GetUt()  int{
+func (me * RobotoCondensedRegular)GetUt()  int{
 	return me.ut
 }
-func (me * RobotoCondensed-Regular)GetCw() gopdf.FontCw{
+func (me * RobotoCondensedRegular)GetCw() gopdf.FontCw{
 	return me.cw
 }
-func (me * RobotoCondensed-Regular)GetEnc() string{
+func (me * RobotoCondensedRegular)GetEnc() string{
 	return me.enc
 }
-func (me * RobotoCondensed-Regular)GetDiff() string {
+func (me * RobotoCondensedRegular)GetDiff() string {
 	return me.diff
 }
-func (me * RobotoCondensed-Regular) GetOriginalsize() int{
+func (me * RobotoCondensedRegular) GetOriginalsize() int{
 	return 98764
 }
-func (me * RobotoCondensed-Regular)  SetFamily(family string){
+func (me * RobotoCondensedRegular)  SetFamily(family string){
 	me.family = family
 }
-func (me * RobotoCondensed-Regular) 	GetFamily() string{
+func (me * RobotoCondensedRegular) 	GetFamily() string{
 	return me.family
 }
